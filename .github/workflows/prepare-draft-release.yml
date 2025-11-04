@@ -14,6 +14,9 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-tags: 'true'
+          ref: ${{ github.ref }}
       - name: Create draft release from tag
         env:
           GH_TOKEN: ${{ github.token }}
